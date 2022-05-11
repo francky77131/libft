@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:29:15 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/11 07:46:45 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:49:41 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <ctype.h>
 # include <string.h>
 # include <stddef.h>
-#include <bsd/string.h>
+# include <bsd/string.h>
 
 
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
@@ -42,4 +42,6 @@ int ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t	ft_strlcat( char *dst , const char *src , size_t size );
 void *ft_memchr(const void *s, int c, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char *ft_strdup(const char *s);
+void *ft_calloc(size_t nmemb, size_t size);
 #endif

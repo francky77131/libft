@@ -6,7 +6,7 @@
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/05/11 07:50:41 by frgojard         ###   ########.fr        #
+#    Updated: 2022/05/11 15:49:16 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ SRC = 	ft_strncmp.c \
 		ft_strlcat.c \
 		ft_memchr.c \
 		ft_strnstr.c \
+		ft_strdup.c \
+		ft_calloc.c
 
 OBJS = $(SRC:.c=.o)
 
@@ -54,7 +56,7 @@ clean:	#Permet de delete toutles fichier objet.
 	$(RM) $(OBJS)
 	$(RM) main.o
 
-fclean:	clean clean	#Permet de delete tout les executable "prog" ainsi que les .o grace a la au clean ecrit apresma regle fclean.
+fclean:	clean #Permet de delete tout les executable "prog" ainsi que les .o grace a la au clean ecrit apresma regle fclean.
 	$(RM) $(NAME)
 	$(RM) prog
 

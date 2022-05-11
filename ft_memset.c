@@ -6,13 +6,13 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:55:32 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/09 11:05:00 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/11 12:15:43 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memset (void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*str;
 	size_t	i;
@@ -22,7 +22,7 @@ void *ft_memset (void *s, int c, size_t n)
 	while (i < n)
 	{
 		str[i] = c;
-		i++;		
+		i++;
 	}
 	return (s);
 }

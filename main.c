@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/11 07:52:51 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:11:51 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	main(void)
 {
 	//---------------- ft_strncmp ----------------//
-	printf("ft_strncmp : %d\n", ft_strncmp("Aa", "aa", 3));
-	printf("strncmp : %d\n", strncmp("Aa", "aa", 3));
+	printf("ft_strncmp : %d\n", ft_strncmp("Aa", "aa", 2));
+	printf("strncmp : %d\n", strncmp("Aa", "aa", 2));
 	//---------------- ft_strlen ----------------//
 	printf("ft_strlen : %ld\n", ft_strlen("Salut ca va ?"));
 	printf("strlen : %lu\n", strlen("Salut ca va ?"));
@@ -47,8 +47,8 @@ int	main(void)
 	printf("ft_atoi : %d\n", ft_atoi("   1234ac"));
 	printf("atoi : %d\n", atoi("   1234ac"));
 		//---------------- ft_strchr ----------------//
-	printf("ft_strchr : %s\n", ft_strchr("salut ca va ?", 'k'));
-	printf("strchr : %s\n", strchr("salut ca va ?", 'a'));
+	printf("ft_strchr : %s\n", ft_strchr("salut ca va ?", 0));
+	printf("strchr : %s\n", strchr("salut ca va ?", 0));
 	//---------------- ft_strrchr ----------------//
 	printf("ft_strrchr : %s\n", ft_strrchr("salut ca va ?", 'a'));
 	printf("strrchr : %s\n", strrchr("salut ca va ?", 'a'));
@@ -103,4 +103,10 @@ int	main(void)
 	//---------------- ft_strnstr ----------------//
 	printf("ft_strnstr : %s\n", ft_strnstr("abajas", "aj", 4));
 	//printf("strnstr : %s\n", strnstr("abajas", "aj", 4));
+	//---------------- ft_strdup ----------------//
+	printf("ft_strdup : %s\n", ft_strdup("aaax"));
+	printf("strdup : %s\n", strdup("aaax"));
+	//---------------- ft_calloc ----------------//
+	printf("ft_calloc : %p\n", ft_calloc(5, 5));
+	printf("calloc : %p\n", calloc(5, 5));
 }
