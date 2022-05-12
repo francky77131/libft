@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/11 16:11:51 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/12 11:55:07 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,10 @@ int	main(void)
 	//---------------- ft_calloc ----------------//
 	printf("ft_calloc : %p\n", ft_calloc(5, 5));
 	printf("calloc : %p\n", calloc(5, 5));
+	//---------------- ft_substr ----------------//
+	printf("ft_strdup : %s\n", ft_substr("tripouille", 1, 1));
+	//---------------- ft_strjoin ----------------//
+	printf("ft_strjoin : %s\n", ft_strjoin("Salut ca va ? ", "Non et ferme la merci"));
+	//---------------- ft_strtrim ----------------//
+	printf("ft_strtrim : %s\n", ft_strtrim("ABCDAEAB", "AB"));
 }

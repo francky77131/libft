@@ -6,7 +6,7 @@
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/05/11 15:49:16 by frgojard         ###   ########.fr        #
+#    Updated: 2022/05/12 11:47:53 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,10 @@ SRC = 	ft_strncmp.c \
 		ft_memchr.c \
 		ft_strnstr.c \
 		ft_strdup.c \
-		ft_calloc.c
+		ft_calloc.c \
+		ft_substr.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
 
 OBJS = $(SRC:.c=.o)
 
