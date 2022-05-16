@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/12 11:55:07 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:10:42 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,6 @@ int	main(void)
 	printf("ft_strjoin : %s\n", ft_strjoin("Salut ca va ? ", "Non et ferme la merci"));
 	//---------------- ft_strtrim ----------------//
 	printf("ft_strtrim : %s\n", ft_strtrim("ABCDAEAB", "AB"));
+	//---------------- ft_split ----------------//
+	printf("ft_split : %s\n", ft_split("OuiAnonAouaiAAbonjourA", "A"));
 }
