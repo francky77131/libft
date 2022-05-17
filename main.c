@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/16 17:45:43 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/17 15:14:42 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,8 @@ int	main(void)
 	printf("ft_strdup : %s\n", ft_strdup("aaax"));
 	printf("strdup : %s\n", strdup("aaax"));
 	//---------------- ft_calloc ----------------//
-	printf("ft_calloc : %p\n", ft_calloc(5, 5));
-	printf("calloc : %p\n", calloc(5, 5));
+	printf("ft_calloc : %p\n", ft_calloc(2, 2));
+	printf("calloc : %p\n", calloc(2, 2));
 	//---------------- ft_substr ----------------//
 	printf("ft_strdup : %s\n", ft_substr("tripouille", 1, 1));
 	//---------------- ft_strjoin ----------------//
