@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:07:44 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/16 17:51:46 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/17 11:59:31 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,89 +31,73 @@ static int	ft_countwords(const char *str, char sep)
 				i++;
 		}
 	}
-	printf("nb words : %d\n", words);
 	return (words);
 }
 
-static int	*ft_countchar(const char *str, char sep, int *tab)
+static void	ft_countchar(const char *str, char sep, int *tab)
 {
 	int nbchr;
 	int i;
+	int k;
 
 	i = 0;
+	k = 0;
 	nbchr = 0;
 	while (str[i])
 	{
-		if (str[i] == sep)
-		{
+		while (str[i] == sep && str[i])
 			i++;
-			if (nbchr > 0)
-			{
-				*tab = nbchr;
-				++tab;
-			}
-			nbchr = 0;
-		}
-		else
+		if (str[i] != sep && str[i])
 		{
 			while(str[i] && str[i] != sep)
 			{
 				i++;
 				nbchr++;
 			}
+			tab[k] = nbchr;
+			k++;
+			nbchr = 0;
 		}
 	}
-	return (tab);
 }
 
-char	**ft_split(char const *s, char c)
+
+static char **ft_print(char const *s, char **str, int nbwords, char c)
 {
-	char **str;
-	int	nbwords;
-	int	i;
+	int i;
 	int j;
 	int *tab;
 
 	i = 0;
 	j = 0;
-	nbwords = ft_countwords(s, c);
-
-	str = malloc(sizeof(char*) * (nbwords));
-	if (!str)
-		return (NULL);
 	tab = malloc(sizeof(int*) * nbwords);
 	if (!tab)
 		return(NULL);
 	ft_countchar(s, c, tab);
 	while (i < nbwords)
 	{
-		while (s[j] == c)
+		while (s[j] == c && s[j])
 			j++;
 		str[i] = ft_substr(s, j, tab[i]);
 		str[i][tab[i]] = 0;
-		while (s[j] != c)
+		while (s[j] != c && s[j])
 			j++;
 		i++;
 	}
+	free(tab);	
 	str[i] = 0;
-	free(tab);
+	return (str);
+}
+char	**ft_split(char const *s, char c)
+{
+	char **str;
+	int	nbwords;
+
+	nbwords = ft_countwords(s, c);
+	str = malloc(sizeof(char*) * (nbwords + 1));
+	if (!str)
+		return (NULL);
+	ft_print(s, str, nbwords, c);
 	return (str);
 }
 
-int main (void)
-{
-    char test[] = ",,,,dsss,, 1234,,567,";
-    char *str = strdup(test);
-     
-    char **result = ft_split(str, ',');
-     
-    int i = 0;
-    while (result[i])
-    {
-        printf("%s\n",result[i]);
-        free(result[i]);
-        i++;
-	}
-    free(result);
-	free(str);
-}
