@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+
 int	main(void)
 {
 	//---------------- ft_strncmp ----------------//
@@ -117,4 +118,16 @@ int	main(void)
 	printf("ft_strtrim : %s\n", ft_strtrim("ABCDAEAB", "AB"));
 	//---------------- ft_split ----------------//
 	ft_split("OuiAnonAouaiAAbonjourA", 'A');
+	//---------------- ft_putchar_fd ----------------//
+	ft_putchar_fd('A', 1);
+	//---------------- ft_putstr_fd ----------------//
+	ft_putstr_fd("salut ca va ?", 1);
+	//---------------- ft_putendl_fd ----------------//
+	ft_putendl_fd("salut ca va ?", 1);
+	//---------------- ft_putnbr_fd ----------------//
+	ft_putnbr_fd(1234, 1);
+	//---------------- ft_strmapi ----------------//
+	//ft_strmapi("salut ca va ?");
+	//---------------- ft_striteri ----------------//
+	//ft_striteri("salut ca va ?");
 }
