@@ -130,4 +130,6 @@ int	main(void)
 	//ft_strmapi("salut ca va ?");
 	//---------------- ft_striteri ----------------//
 	//ft_striteri("salut ca va ?");
+	//---------------- ft_itoa ----------------//
+	printf("\nft_itoa : %s\n", ft_itoa(-1234));
 }
