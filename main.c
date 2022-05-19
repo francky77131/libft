@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/19 12:07:01 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:02:38 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	main(void)
 	printf("ft_calloc : %p\n", ft_calloc(2, 2));
 	printf("calloc : %p\n", calloc(2, 2));
 	//---------------- ft_substr ----------------//
-	printf("ft_strdup : %s\n", str);
+	printf("ft_substr : %s\n", ft_substr("0123456789", 9, 10));
 	//---------------- ft_strjoin ----------------//
 	printf("ft_strjoin : %s\n", ft_strjoin("Salut ca va ? ", "Non et ferme la merci"));
 	//---------------- ft_strtrim ----------------//

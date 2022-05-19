@@ -6,13 +6,13 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:47:01 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/19 10:52:30 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/19 15:32:52 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_check(char c, char const *set)
+static int	ft_check(char c, char const *set)
 {
 	int	i;
 

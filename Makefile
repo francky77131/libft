@@ -6,15 +6,13 @@
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/05/16 10:08:42 by frgojard         ###   ########.fr        #
+#    Updated: 2022/05/19 15:30:30 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a #donne un nom d'executable a mes fichier SRC.
 
-CC = gcc
-
-CFLAGS = -Wall -Werror -Wextra -g3
+CC = gcc -Wall -Werror -Wextra
 
 RM = rm -f
 
@@ -53,20 +51,33 @@ SRC = 	ft_strncmp.c \
 		ft_striteri.c \
 		ft_itoa.c \
 
+BONUS_SRC = ft_lstnew_bonus.c \
+            ft_lstadd_front_bonus.c \
+            ft_lstsize_bonus.c \
+            ft_lstlast_bonus.c \
+            ft_lstadd_back_bonus.c \
+            ft_lstdelone_bonus.c \
+            ft_lstclear_bonus.c \
+            ft_lstiter_bonus.c \
+            ft_lstmap_bonus.c
 
+OBJ = $(SRC:.c=.o)
 
-OBJS = $(SRC:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all: $(NAME) test #all est une regle qui appelle une regle qui effectura la compilation en l'occurence $(NAME). 
 		
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) -c $< -o $(<:.c=.o)
 
-$(NAME): $(OBJS) #Cette regle effectue la compilation et faite un executable "prog" pour toute mes SRC.
-	ar rcs $(NAME) $(OBJS) 
+$(NAME): $(OBJ) #Cette regle effectue la compilation et faite un executable "prog" pour toute mes SRC.
+	ar rc $(NAME) $(OBJ) 
+
+bonus: test $(OBJ) $(BONUS_OBJ)
+	ar rc $(NAME) $(OBJ) $(BONUS_OBJ)
 
 clean:	#Permet de delete toutles fichier objet.
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)
 	$(RM) main.o
 
 fclean:	clean #Permet de delete tout les executable "prog" ainsi que les .o grace a la au clean ecrit apresma regle fclean.
@@ -76,10 +87,10 @@ fclean:	clean #Permet de delete tout les executable "prog" ainsi que les .o grac
 re: fclean test #Permet de tout recompiler de zero en supprimant tout les .o et .c.
 
 test: all
-	$(CC) $(CFLAGS) -c main.c
-	$(CC) $(CFLAGS) main.o	-L . -lft -o prog
+	$(CC) -c main.c
+	$(CC) main.o -L . -lft -o prog
 
 valgrind: test
 	valgrind --leak-check=full ./prog
 
-.PHONY: all clean fclean re
+.PHONY: all bonus clean fclean re
