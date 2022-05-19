@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 20:48:54 by franckgojar       #+#    #+#             */
-/*   Updated: 2022/05/18 20:48:55 by franckgojar      ###   ########.fr       */
+/*   Updated: 2022/05/19 10:44:14 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    int i;
+	unsigned int	i;
 
-    i = 0;
-    while (*s)
-    {
-        (*f)(i, s);
-        s++;
-        i++;
-    }
+	i = 0;
+	while (*s)
+	{
+		(*f)(i, s);
+		s++;
+		i++;
+	}
 }

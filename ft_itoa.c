@@ -3,59 +3,72 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 20:31:39 by franckgojar       #+#    #+#             */
-/*   Updated: 2022/05/18 20:31:48 by franckgojar      ###   ########.fr       */
+/*   Updated: 2022/05/19 11:34:00 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int  ft_len(long int nbr)
+static int	ft_len(long int nbr)
 {
-    long int    i;
+	long int	i;
 
-    i = 0;
-    if (nbr == 0)
-        i++;
-    if (nbr < 0)
-    {
-        nbr *= -1;
-        i++;
-    }
-    while (nbr > 0)
-    {
-        nbr /= 10;
-        i++;
-    }
-    return i;
+	i = 0;
+	if (nbr == 0)
+		i++;
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		i++;
+	}
+	while (nbr > 0)
+	{
+		nbr /= 10;
+		i++;
+	}
+	return (i);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int len;
-    long int    num;
-    char    *tab;
+	int			len;
+	long int	num;
+	char		*tab;
 
-    num = n;
-    len = ft_len(n);
-    if (n < 0)
-        num *= -1;
-    tab = (char *)malloc(sizeof(*tab) * (len + 1));
-    if (!tab)
-        return (NULL);
-    tab[len] = 0;
-    len--;
-    if (n == 0)
-        *tab = '0';
-    while (num > 0)
-    {
-        tab[len] = num % 10 + 48;
-        num /= 10; 
-        len--;
-    }
-    if (n < 0)
-        tab[len] = '-';
-    return (tab);
+	num = n;
+	len = ft_len(n);
+	if (n < 0)
+		num *= -1;
+	tab = (char *)malloc(sizeof(*tab) * (len + 1));
+	if (!tab)
+		return (NULL);
+	tab[len] = 0;
+	len--;
+	if (n == 0)
+		*tab = '0';
+	while (num > 0)
+	{
+		tab[len] = num % 10 + 48;
+		num /= 10;
+		len--;
+	}
+	if (n < 0)
+		tab[len] = '-';
+	return (tab);
+}
+
+#include <limits.h>
+
+int main(void)
+{
+	char *str;
+
+	for (int i = INT_MIN ; i < INT_MAX ; i++)
+	{
+		str = ft_itoa(i);
+		free(str);
+	}
 }

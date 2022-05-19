@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:07:44 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/17 11:59:31 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:01:32 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 static int	ft_countwords(const char *str, char sep)
 {
-	int words;
-	int i;
-
+	int	words;
+	int	i;
 
 	i = 0;
 	words = 0;
@@ -27,7 +26,7 @@ static int	ft_countwords(const char *str, char sep)
 		else
 		{
 			words++;
-			while(str[i] != 0 && str[i] != sep)
+			while (str[i] != 0 && str[i] != sep)
 				i++;
 		}
 	}
@@ -36,9 +35,9 @@ static int	ft_countwords(const char *str, char sep)
 
 static void	ft_countchar(const char *str, char sep, int *tab)
 {
-	int nbchr;
-	int i;
-	int k;
+	int	nbchr;
+	int	i;
+	int	k;
 
 	i = 0;
 	k = 0;
@@ -49,7 +48,7 @@ static void	ft_countchar(const char *str, char sep, int *tab)
 			i++;
 		if (str[i] != sep && str[i])
 		{
-			while(str[i] && str[i] != sep)
+			while (str[i] && str[i] != sep)
 			{
 				i++;
 				nbchr++;
@@ -61,18 +60,17 @@ static void	ft_countchar(const char *str, char sep, int *tab)
 	}
 }
 
-
-static char **ft_print(char const *s, char **str, int nbwords, char c)
+static char	**ft_print(char const *s, char **str, int nbwords, char c)
 {
-	int i;
-	int j;
-	int *tab;
+	int	i;
+	int	j;
+	int	*tab;
 
 	i = 0;
 	j = 0;
-	tab = malloc(sizeof(int*) * nbwords);
+	tab = malloc(sizeof(int *) * nbwords);
 	if (!tab)
-		return(NULL);
+		return (NULL);
 	ft_countchar(s, c, tab);
 	while (i < nbwords)
 	{
@@ -84,20 +82,20 @@ static char **ft_print(char const *s, char **str, int nbwords, char c)
 			j++;
 		i++;
 	}
-	free(tab);	
+	free(tab);
 	str[i] = 0;
 	return (str);
 }
+
 char	**ft_split(char const *s, char c)
 {
-	char **str;
-	int	nbwords;
+	char	**str;
+	int		nbwords;
 
 	nbwords = ft_countwords(s, c);
-	str = malloc(sizeof(char*) * (nbwords + 1));
+	str = malloc(sizeof(char *) * (nbwords + 1));
 	if (!str)
 		return (NULL);
 	ft_print(s, str, nbwords, c);
 	return (str);
 }
-
