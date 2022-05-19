@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 20:31:39 by franckgojar       #+#    #+#             */
-/*   Updated: 2022/05/19 11:34:00 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:40:50 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,17 +58,4 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		tab[len] = '-';
 	return (tab);
-}
-
-#include <limits.h>
-
-int main(void)
-{
-	char *str;
-
-	for (int i = INT_MIN ; i < INT_MAX ; i++)
-	{
-		str = ft_itoa(i);
-		free(str);
-	}
 }

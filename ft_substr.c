@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 07:15:06 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/19 10:51:27 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/19 12:33:19 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	j = 0;
 	i = 0;
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	if (ft_strlen(s) < start)
+		len = 0;
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
