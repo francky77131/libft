@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
+#    By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/05/19 15:30:30 by frgojard         ###   ########.fr        #
+#    Updated: 2022/05/20 22:59:50 by franckgojar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ all: $(NAME) test #all est une regle qui appelle une regle qui effectura la comp
 	$(CC) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJ) #Cette regle effectue la compilation et faite un executable "prog" pour toute mes SRC.
-	ar rc $(NAME) $(OBJ) 
+	ar rc $(NAME) $(OBJ)
 
 bonus: test $(OBJ) $(BONUS_OBJ)
 	ar rc $(NAME) $(OBJ) $(BONUS_OBJ)
@@ -79,6 +79,7 @@ bonus: test $(OBJ) $(BONUS_OBJ)
 clean:	#Permet de delete toutles fichier objet.
 	$(RM) $(OBJ)
 	$(RM) main.o
+	$(RM) $(BONUS_OBJ)
 
 fclean:	clean #Permet de delete tout les executable "prog" ainsi que les .o grace a la au clean ecrit apresma regle fclean.
 	$(RM) $(NAME)
