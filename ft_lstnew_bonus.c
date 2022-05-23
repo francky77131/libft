@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/20 15:30:22 by frgojard          #+#    #+#             */
+/*   Updated: 2022/05/23 10:59:54 by frgojard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list *ft_lstnew(void *content)
 {
-    t_list *newcontent;
+    t_list *newlist;
 
-    newcontent = malloc(sizeof(newcontent));
-    if (newcontent = NULL)
+    newlist = malloc(sizeof(t_list));
+    if (!newlist)
         return (NULL);
-    newcontent->content = content;
-    newcontent->next = NULL;
-    return (newcontent);
+    newlist->content = content;
+    newlist->next = NULL;
+    return (newlist);
 }

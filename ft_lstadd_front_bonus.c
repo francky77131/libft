@@ -1,11 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/23 10:22:07 by frgojard          #+#    #+#             */
+/*   Updated: 2022/05/23 14:04:24 by frgojard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if (lst)
-    {
-        if (!lst)
-            new->next = *lst;
+        new->next = *lst;
         *lst = new;
-    }
 }

@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/19 13:02:38 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/23 16:00:53 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main(void)
 {
-	//---------------- ft_strncmp ----------------//
+/*	//---------------- ft_strncmp ----------------//
 	printf("ft_strncmp : %d\n", ft_strncmp("Aa", "aa", 2));
 	printf("strncmp : %d\n", strncmp("Aa", "aa", 2));
 	//---------------- ft_strlen ----------------//
@@ -132,4 +132,23 @@ int	main(void)
 	//ft_striteri("salut ca va ?");
 	//---------------- ft_itoa ----------------//
 	printf("\nft_itoa : %s\n", ft_itoa(-1234));
+*/
+
+	t_list *lst;
+	int	a;
+	int *ptr;
+	int b;
+	a = 42;
+	lst = ft_lstnew(&a);
+	t_list *new;
+	b = 86468;
+	new = ft_lstnew(&b);
+	ft_lstadd_back(&lst, new);
+	while (lst != NULL)
+	{
+		ptr = lst->content;
+		printf("%d\n", *ptr);
+		lst = lst->next;
+	}
+	
 }
