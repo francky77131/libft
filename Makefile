@@ -6,13 +6,13 @@
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/05/23 14:31:39 by frgojard         ###   ########.fr        #
+#    Updated: 2022/05/24 16:00:36 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a #donne un nom d'executable a mes fichier SRC.
 
-CC = clang -Wall -Werror -Wextra
+CC = gcc -Wall -Werror -Wextra
 
 RM = rm -f
 
@@ -56,6 +56,10 @@ BONUS_SRC = ft_lstnew_bonus.c \
             ft_lstsize_bonus.c \
             ft_lstlast_bonus.c \
             ft_lstadd_back_bonus.c \
+			ft_lstdelone_bonus.c \
+			ft_lstclear_bonus.c \
+			ft_lstiter_bonus.c \
+			ft_lstmap_bonus.c
 
 
 OBJ = $(SRC:.c=.o)

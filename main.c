@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
+/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/23 17:48:22 by franckgojar      ###   ########.fr       */
+/*   Updated: 2022/05/24 15:04:32 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int	main(void)
 {
@@ -132,23 +131,26 @@ int	main(void)
 	//ft_striteri("salut ca va ?");
 	//---------------- ft_itoa ----------------//
 	printf("\nft_itoa : %s\n", ft_itoa(-1234));
-*/
+
 
 	t_list *lst;
+	t_list *tmp;
 	int	a;
 	int *ptr;
 	int b;
-	a = 42;
+	int c;
+	a = 2;
+	b = 3;
+	c = 1;
 	lst = ft_lstnew(&a);
-	t_list *new;
-	b = 86468;
-	new = ft_lstnew(&b);
-	ft_lstadd_back(&lst, new);
-	while (lst != NULL)
+	ft_lstadd_back(&lst,ft_lstnew(&b));
+	ft_lstadd_front(&lst,ft_lstnew(&c));
+	tmp = lst;
+	while (lst)
 	{
 		ptr = lst->content;
 		printf("%d\n", *ptr);
 		lst = lst->next;
 	}
-	
+	*/
 }
