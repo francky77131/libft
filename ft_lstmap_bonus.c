@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 16:01:48 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/25 10:10:59 by frgojard         ###   ########.fr       */
+/*   Created: 2022/05/31 13:56:44 by frgojard          #+#    #+#             */
+/*   Updated: 2022/05/31 16:08:15 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,28 @@
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-    
+	t_list	*newlst;
+	t_list	*tmp;
+
+	newlst = ft_lstnew((*f)(lst->content));
+	if (!newlst)
+	{
+		ft_lstclear(&newlst, del);
+		return (NULL);
+	}
+	tmp = newlst;
+	lst = lst->next;
+	while (lst != NULL)
+	{
+		ft_lstadd_back(&tmp, ft_lstnew(f(lst->content)));
+		if (!tmp->next)
+		{
+			ft_lstclear(&newlst, del);
+			return (NULL);
+		}
+		tmp = tmp->next;
+		lst = lst->next;
+	}
+	tmp->next = NULL;
+	return (newlst);
 }

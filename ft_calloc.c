@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:38:49 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/19 10:52:49 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/31 16:40:17 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*tab;
 
-	if (nmemb * size / size != size)
-		return (NULL);
-	tab = (void *)malloc(sizeof(void) * (nmemb * size));
+	if (nmemb == 0 || size == 0)
+	{
+		size = 1;
+		nmemb = 1;
+	}
+	tab = malloc(sizeof(void) * (nmemb * size));
 	if (!tab)
 		return (NULL);
 	ft_bzero(tab, nmemb * size);

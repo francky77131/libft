@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:07:44 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/19 11:01:32 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:32:55 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ static char	**ft_print(char const *s, char **str, int nbwords, char c)
 		while (s[j] == c && s[j])
 			j++;
 		str[i] = ft_substr(s, j, tab[i]);
-		str[i][tab[i]] = 0;
 		while (s[j] != c && s[j])
 			j++;
 		i++;

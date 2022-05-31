@@ -6,7 +6,7 @@
 /*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:28:03 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/24 15:04:32 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:51:34 by frgojard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,6 @@ int	main(void)
 	//ft_striteri("salut ca va ?");
 	//---------------- ft_itoa ----------------//
 	printf("\nft_itoa : %s\n", ft_itoa(-1234));
-
 
 	t_list *lst;
 	t_list *tmp;
