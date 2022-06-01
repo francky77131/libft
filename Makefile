@@ -6,7 +6,7 @@
 #    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/05/31 13:55:22 by frgojard         ###   ########.fr        #
+#    Updated: 2022/06/01 12:22:30 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,33 +66,24 @@ OBJ = $(SRC:.c=.o)
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-all: $(NAME) test #all est une regle qui appelle une regle qui effectura la compilation en l'occurence $(NAME). 
+all: $(NAME)
 		
 .c.o:
 	$(CC) -c $< -o $(<:.c=.o)
 
-$(NAME): $(OBJ) #Cette regle effectue la compilation et faite un executable "prog" pour toute mes SRC.
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-bonus: test $(OBJ) $(BONUS_OBJ)
-	ar rc $(NAME) $(OBJ) $(BONUS_OBJ)
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
-clean:	#Permet de delete toutles fichier objet.
+clean:
 	$(RM) $(OBJ)
-	$(RM) main.o
 	$(RM) $(BONUS_OBJ)
 
-fclean:	clean #Permet de delete tout les executable "prog" ainsi que les .o grace a la au clean ecrit apresma regle fclean.
+fclean:	clean
 	$(RM) $(NAME)
-	$(RM) prog
 
-re: fclean test #Permet de tout recompiler de zero en supprimant tout les .o et .c.
-
-test: all
-	$(CC) -c main.c
-	$(CC) main.o -L . -lft -o prog
-
-valgrind: test
-	valgrind --leak-check=full ./prog
+re: fclean all
 
 .PHONY: all bonus clean fclean re
