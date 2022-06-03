@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 10:07:44 by frgojard          #+#    #+#             */
-/*   Updated: 2022/05/31 14:32:55 by frgojard         ###   ########.fr       */
+/*   Updated: 2022/06/02 18:40:54 by franckgojar      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ char	**ft_split(char const *s, char c)
 	char	**str;
 	int		nbwords;
 
+	if (!s)
+		return (NULL);
 	nbwords = ft_countwords(s, c);
 	str = malloc(sizeof(char *) * (nbwords + 1));
 	if (!str)

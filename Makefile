@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: frgojard <frgojard@student.42.fr>          +#+  +:+       +#+         #
+#    By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/06/01 12:22:30 by frgojard         ###   ########.fr        #
+#    Updated: 2022/06/01 18:15:20 by franckgojar      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a #donne un nom d'executable a mes fichier SRC.
+NAME = libft.a
 
 CC = gcc -Wall -Werror -Wextra
 
@@ -74,8 +74,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+bonus: $(BONUS_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ)
 
 clean:
 	$(RM) $(OBJ)
