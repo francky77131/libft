@@ -6,7 +6,7 @@
 #    By: franckgojard <franckgojard@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:35:24 by frgojard          #+#    #+#              #
-#    Updated: 2022/06/01 18:15:20 by franckgojar      ###   ########.fr        #
+#    Updated: 2022/06/03 16:41:29 by frgojard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ SRC = 	ft_strncmp.c \
 		ft_putnbr_fd.c \
 		ft_strmapi.c \
 		ft_striteri.c \
-		ft_itoa.c \
+		ft_itoa.c 
 
 BONUS_SRC = ft_lstnew_bonus.c \
             ft_lstadd_front_bonus.c \
